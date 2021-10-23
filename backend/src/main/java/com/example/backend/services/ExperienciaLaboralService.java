@@ -7,4 +7,6 @@ public interface ExperienciaLaboralService {
     ExperienciaLaboral createExperienciaLaboral(ExperienciaLaboral experienciaLaboral);
 
     ExperienciaLaboral updateExperienciaLaboral(ExperienciaLaboral experienciaLaboral);
+
+    void deleteExperienciaLaboral (Integer id);
 }

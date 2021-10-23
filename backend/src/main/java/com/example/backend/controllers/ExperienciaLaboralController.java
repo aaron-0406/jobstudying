@@ -31,5 +31,10 @@ public class ExperienciaLaboralController {
         //retornar el objeto tipoExperienciaLaboral
         return new ResponseEntity<ExperienciaLaboral>(experienciaLaboralnew, HttpStatus.OK);
     }
+    @DeleteMapping("/{idExperienciaLaboral}")
+    public ResponseEntity<String> deleteExperienciaLaboral(@PathVariable("idExperienciaLaboral") Integer idExperienciaLaboral){
+        experienciaLaboralService.deleteExperienciaLaboral(idExperienciaLaboral);
+        return  new ResponseEntity<>("Experiencia Laboral eliminada", HttpStatus.OK);
+    }
 }
 

@@ -21,7 +21,7 @@ public class FormacionAcademica {
     @NotNull
     @Column(name = "fecha_inicio", nullable = false)
     private LocalDate fechaInicio;
-
+    @NotNull
     @Column(name = "fecha_fin", nullable = false)
     private LocalDate fechaFin;
 

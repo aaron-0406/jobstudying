@@ -32,7 +32,7 @@ public class OfertaController { //CONTROLLER RECIBE PETICIONES
     }
 
     //Eliminar Oferta
-    @DeleteMapping("/idOferta")
+    @DeleteMapping("/{idOferta}")
     public ResponseEntity <String> eliminarOferta(@PathVariable ("idOferta") Integer idOferta){
         ofertaService.eliminarOferta(idOferta);
         return  new ResponseEntity<>("Oferta eliminada", HttpStatus.OK);

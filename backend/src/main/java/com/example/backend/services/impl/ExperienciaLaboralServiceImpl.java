@@ -26,4 +26,9 @@ public class ExperienciaLaboralServiceImpl implements ExperienciaLaboralService 
     public ExperienciaLaboral updateExperienciaLaboral(ExperienciaLaboral experienciaLaboral) {
         return experienciaLaboralRepository.save(experienciaLaboral);
     }
+
+    @Override
+    public void deleteExperienciaLaboral(Integer id) {
+       experienciaLaboralRepository.deleteById(id);
+    }
 }
