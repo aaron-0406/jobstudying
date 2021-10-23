@@ -1,8 +1,11 @@
 package com.example.backend.repositories;
 
-import com.example.backend.model.Aptitud;
+
+import com.example.backend.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AptitudRepository extends JpaRepository<Aptitud, Integer> { }
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> { }
+
+
