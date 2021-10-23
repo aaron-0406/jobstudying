@@ -24,5 +24,4 @@ public class AptitudServiceImpl implements AptitudService {
         aptitudRepository.deleteById(id);
     }
 
-
 }
