@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class FormacionAcademicaServiceImpl implements FormacionAcademicaService {
 
-    //CREANDO OBJETO QUE HEREDA TODO LO DE JPA
-    FormacionAcademicaRepository formacionAcademicaRepository;
-
+    //CREANDO OBJETO QUE HEREDATODO LO DE JPA
+    private FormacionAcademicaRepository formacionAcademicaRepository;
     public FormacionAcademicaServiceImpl(FormacionAcademicaRepository formacionAcademicaRepository) {
         //INICIALIZANDO OBJETO
         this.formacionAcademicaRepository = formacionAcademicaRepository;
+    }
+
+    @Override
+    public FormacionAcademica createFormacionAcademica(FormacionAcademica formacionAcademica) {
+        return formacionAcademicaRepository.save(formacionAcademica);
     }
 
     @Override

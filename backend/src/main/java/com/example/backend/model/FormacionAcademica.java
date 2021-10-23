@@ -22,7 +22,7 @@ public class FormacionAcademica {
     @Column(name = "fecha_inicio", nullable = false)
     private LocalDate fechaInicio;
 
-    @Column(name = "fecha_fin", nullable = true)
+    @Column(name = "fecha_fin", nullable = false)
     private LocalDate fechaFin;
 
     public FormacionAcademica(Integer idFormacion, String institucion, LocalDate fechaInicio, LocalDate fechaFin) {
