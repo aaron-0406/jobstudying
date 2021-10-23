@@ -17,4 +17,15 @@ import org.springframework.stereotype.Service;
         public Usuario createRegistro(Usuario usuario) {
             return usuarioRepository.save(usuario);
         }
+
+        @Override
+        public Usuario modificarInformacionUsuario(Usuario usuario) {
+            return usuarioRepository.save(usuario);
+        }
+
+        @Override
+        public void deleteCuentaUsuario(Integer id) {
+            usuarioRepository.deleteById(id);
+        }
+
     }

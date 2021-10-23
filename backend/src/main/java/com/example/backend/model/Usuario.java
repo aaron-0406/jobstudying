@@ -20,9 +20,11 @@ public class Usuario {
     @NotNull
     @Column(name = "tipo_usuario", nullable = false, length = 20)
     private String tipoUsuario;
+
     @NotNull
     @Column(name = "contrasenia_usuario", nullable = false, length = 20)
-    private String contraseniaUsuario;
+    private String contaseniaUsuario;
+
     @NotNull
     @Column(name = "email_usuario", nullable = false, length = 20)
     private String emailUsuario;
@@ -35,15 +37,14 @@ public class Usuario {
 
     public Usuario(){}
 
-        public Usuario(Integer Id_Usuario, String apellidoUsuario, String contraseniaUsuario, String emailUsuario, int telefonoUsuario, String generoUsuario, String tipoUsuario   ) {
+    public Usuario(Integer Id_Usuario, String apellidoUsuario, String tipoUsuario, String contaseniaUsuario, String emailUsuario, int telefonoUsuario, String generoUsuario) {
         this.Id_Usuario = Id_Usuario;
         this.apellidoUsuario = apellidoUsuario;
-        this.contraseniaUsuario = contraseniaUsuario;
+        this.contaseniaUsuario = contaseniaUsuario;
         this.emailUsuario = emailUsuario;
         this.telefonoUsuario = telefonoUsuario;
         this.generoUsuario = generoUsuario;
         this.tipoUsuario = tipoUsuario;
-
     }
 
     public Integer getId_Usuario() {
@@ -71,11 +72,11 @@ public class Usuario {
     }
 
     public String getContaseniaUsuario() {
-        return contraseniaUsuario;
+        return contaseniaUsuario;
     }
 
     public void setContaseniaUsuario(String contaseniaUsuario) {
-        this.contraseniaUsuario = contaseniaUsuario;
+        this.contaseniaUsuario = contaseniaUsuario;
     }
 
     public String getEmailUsuario() {
@@ -100,7 +101,6 @@ public class Usuario {
 
     public void setGeneroUsuario(String generoUsuario) {
         this.generoUsuario = generoUsuario;
-
     }
 
     public String getTipoUsuario() {
