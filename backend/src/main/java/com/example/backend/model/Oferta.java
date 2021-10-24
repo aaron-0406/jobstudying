@@ -1,13 +1,15 @@
 package com.example.backend.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Ofertas")
+@Table(name = "ofertas")
 public class Oferta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idOferta;
@@ -34,14 +36,27 @@ public class Oferta {
     @Column(name = "postulantes", nullable = false)
     private Integer cantPostulantes;
 
+    public Oferta(Integer idOferta, String nombre, String descripcion, LocalDate fechaInicio, Integer vigencia, Integer cantPostulantes) {
+        this.idOferta = idOferta;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.vigencia = vigencia;
+        this.cantPostulantes = cantPostulantes;
+    }
+
+    //Constructor
+    public Oferta() {
+    }
 
     //Getters y Setters
+
     public Integer getIdOferta() {
         return idOferta;
     }
 
     public void setIdOferta(Integer idOferta) {
-        idOferta = idOferta;
+        this.idOferta = idOferta;
     }
 
     public String getNombre() {
@@ -60,6 +75,14 @@ public class Oferta {
         this.descripcion = descripcion;
     }
 
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
     public Integer getVigencia() {
         return vigencia;
     }
@@ -74,26 +97,5 @@ public class Oferta {
 
     public void setCantPostulantes(Integer cantPostulantes) {
         this.cantPostulantes = cantPostulantes;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    //Constructor
-    public Oferta() {
-    }
-
-    public Oferta(Integer idOferta, String descripcion, String nombre, Integer vigencia, Integer cantPostulantes, LocalDate fechaInicio) {
-        this.idOferta = idOferta;
-        this.descripcion = descripcion;
-        this.nombre = nombre;
-        this.vigencia = vigencia;
-        this.cantPostulantes = cantPostulantes;
-        this.fechaInicio = fechaInicio;
     }
 }

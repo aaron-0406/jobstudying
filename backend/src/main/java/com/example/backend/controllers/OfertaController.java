@@ -10,31 +10,31 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/ofertas")
-public class OfertaController { //CONTROLLER RECIBE PETICIONES
+public class OfertaController {
 
-    private OfertaService ofertaService;
+    private final OfertaService ofertaService;
 
     public OfertaController(OfertaService ofertaService) {
         this.ofertaService = ofertaService;
     }
 
     @PostMapping
-    public ResponseEntity <Oferta> publicarOferta(@Valid @RequestBody Oferta oferta){
-        Oferta ofertaNew = ofertaService.publicarOferta(oferta);
+    public ResponseEntity<Oferta> createOferta(@Valid @RequestBody Oferta oferta){
+        Oferta ofertaNew = ofertaService.createOferta(oferta);
         return new ResponseEntity<Oferta>(ofertaNew, HttpStatus.CREATED);
     }
 
     //Editar oferta
     @PutMapping //Definir tipo de peticion
-    public ResponseEntity <Oferta> editarOferta(@Valid @RequestBody Oferta oferta){
-        Oferta ofertaUpdate = ofertaService.editarOferta(oferta);
-        return new ResponseEntity<Oferta>(ofertaUpdate, HttpStatus.CREATED);
+    public ResponseEntity<Oferta> modificarOferta(@Valid @RequestBody Oferta oferta){
+        Oferta ofertaUpdate = ofertaService.updateOferta(oferta);
+        return new ResponseEntity<Oferta>(ofertaUpdate, HttpStatus.OK);
     }
 
     //Eliminar Oferta
     @DeleteMapping("/{idOferta}")
-    public ResponseEntity <String> eliminarOferta(@PathVariable ("idOferta") Integer idOferta){
-        ofertaService.eliminarOferta(idOferta);
+    public ResponseEntity <String> deleteOferta(@PathVariable ("idOferta") Integer idOferta){
+        ofertaService.deleteOferta(idOferta);
         return  new ResponseEntity<>("Oferta eliminada", HttpStatus.OK);
     }
 
