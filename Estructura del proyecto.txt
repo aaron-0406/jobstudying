@@ -1,0 +1,18 @@
+
+app {
+	components {
+		common
+		layout
+		views
+	},
+	models {
+	},
+	services {
+	},
+	material {
+	},
+	auth {
+	},
+	views {
+	}
+}

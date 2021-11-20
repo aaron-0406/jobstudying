@@ -1,0 +1,13 @@
+<h1>Perfil del empleador</h1>
+<p>perfil</p>
+<p>ofertas</p>
+<div class="ofertas">
+  <div class="ofertas__title">
+    <p>Ofertas publicadas</p>
+  </div>
+  <div class="ofertas__list">
+    <app-oferta [oferta]="oferta" *ngFor="let oferta of ofertas"></app-oferta>
+  </div>
+</div>
+
+<app-oferta></app-oferta>
