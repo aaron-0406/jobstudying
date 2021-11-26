@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EmpleadorComponent } from './components/views/empleador/empleador/empleador.component';
-import { OfertaComponent } from './components/views/empleador/oferta/oferta.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './components/layouts/navbar/navbar.component';
+import { FooterComponent } from './components/layouts/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, EmpleadorComponent, OfertaComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+//Pages
+import { HomeComponent } from './pages/home/home.component';
+
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  //Definir demás rutas
 ];
 
 @NgModule({
