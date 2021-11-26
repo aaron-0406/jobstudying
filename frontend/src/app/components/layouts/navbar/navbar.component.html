@@ -3,14 +3,23 @@
     <div class="navbar-logo">
       <p>Logo</p>
     </div>
-    <ul class="navbar-list">
+    <ul
+      class="navbar-list"
+      [ngClass]="{ navbarHide: showList, navbarShow: !showList }"
+    >
       <li><a href="">Inicio</a></li>
       <li><a href="">Nosotros</a></li>
       <li><a href="">Contáctanos</a></li>
     </ul>
     <div class="navbar-button">
       <button class="navbar-button__sesion" type="button">IS</button>
-      <button class="navbar-button__toggle" type="button">PP</button>
+      <button
+        class="navbar-button__toggle"
+        type="button"
+        (click)="onShowNavbar()"
+      >
+        PP
+      </button>
     </div>
   </div>
 </div>
