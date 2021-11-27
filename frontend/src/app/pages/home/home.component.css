@@ -1,0 +1,119 @@
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(85vh, auto);
+  }
+a{
+text-decoration: none;
+}
+.container{
+    grid-column: 2;
+    grid-row: 1;
+    padding-left:100px;
+    display: flex;
+    align-items: center;
+}
+/* sessions */
+.portada{
+    grid-column: 1;
+    grid-row: 1;
+    background-image: url("../../../assets/img/log.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+
+.title{
+    color: #156c9d;
+    line-height: 1.25em;
+    font-size: 72px;
+    letter-spacing: normal;
+    overflow-wrap: break-word;
+    text-align: start;
+    margin: 0;
+}
+
+.container p{
+    margin: 25px 0 25px 0;
+    background: transparent;
+    text-align: left;
+    line-height: 1.67em;
+    font-size: 20px;
+}
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #156c9d;
+    border-radius: 0.6em;
+    color: #156c9d;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  .btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
+  }
+  
+  .first {
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+  .first:hover {
+    box-shadow: 0 0 40px 40px #156c9d inset;
+  }
+  
+   
+
+
+
+/*2da parte*/
+.wrapper2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+    grid-auto-rows: minmax(85vh, auto);
+    max-width: 80%;
+    margin:auto;
+  }
+a{
+text-decoration: none;
+}
+.div1{
+    grid-column: 1;
+    grid-row: 1;
+
+}
+/* sessions */
+.div2{
+    grid-column: 3;
+    grid-row: 1;
+    background-image: url("../../../assets/img/session.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
