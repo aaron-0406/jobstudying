@@ -1,0 +1,30 @@
+.equipo {
+    height: 700px;
+    
+}
+.equipo-titulo{
+    color: var(--azul-oscuro);
+    height: 300px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.equipo-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 300px;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.row-equipo {
+    padding: 10px;
+}
