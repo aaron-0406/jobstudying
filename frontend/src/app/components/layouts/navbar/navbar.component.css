@@ -15,6 +15,11 @@
 
 .navbar-logo {
   padding-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  margin-top: auto;
+
 }
 
 .navbar-list {
