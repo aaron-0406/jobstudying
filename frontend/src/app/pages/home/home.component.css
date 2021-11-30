@@ -15,6 +15,7 @@ text-decoration: none;
     display: flex;
     align-items: center;
 }
+
 /* sessions */
 .portada{
     grid-column: 1;
@@ -24,7 +25,6 @@ text-decoration: none;
     background-size: cover;
     background-position: center;
     
-
 }
 
 .title{
@@ -86,9 +86,7 @@ text-decoration: none;
     box-shadow: 0 0 40px 40px #156c9d inset;
   }
   
-   
-
-
+ 
 
 /*2da parte*/
 .wrapper2 {
@@ -115,5 +113,79 @@ text-decoration: none;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
 
+
+.container-fluid{
+	background-color: #156c9d;
+	margin-right: 80px;
+	margin-left: 80px;
+	padding: 50px;
+	text-align: center;
+  margin-top: 50px;
+  color: #fff
+}
+.intro{
+	line-height: 2;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+
+/*EQUIPO*/
+.container-equipo{
+	background-color: #cce8f8;
+	margin-right: 80px;
+	margin-left: 80px;
+	padding: 50px;
+  position: relative;
+	text-align: center;
+  margin-top: 50px;
+  color: #fff
+}
+
+.container-equipo .list-image{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container-equipo .list-image li img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius:150px;
+}
+
+.container-equipo .list-image li{
+  margin-top: 30px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  list-style: none;
+}
+
+
+/*SECCION IMAGEN UNETE*/
+.unete{
+  background-image: url("../../../assets/img/unete.png");
+  background-size: cover;
+  margin-top: 50px;
+  height: 500px;
+  width: 100% ;
+  text-align: center;
+
+}
+.text{
+  margin: 60px 0px 60px 0px; 
+  text-align: center; 
+  margin-top: 160px;
+  color: #fff;
+  padding: 10px;
+  font-size:large;
+  display: inline-block;
+}
+
+.unete .text .mat-raised-button{
+  background-color: #156c9d;
+  color: #fff;
 }
