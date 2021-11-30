@@ -189,3 +189,44 @@ text-decoration: none;
   background-color: #156c9d;
   color: #fff;
 }
+
+/*contactanos*/
+.home-contactanos{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.home-contactanos__seccion1{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.home-contactanos__seccion1-container {
+  width: 400px;
+}
+.home-contactanos__seccion1-container h1 {
+  color: var(--azul-oscuro);
+}
+.home-contactanos__seccion1-container input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #111;
+  padding: 15px 5px;
+  margin: 5px 0;
+  margin-bottom: 10px;
+}
+.home-contactanos__seccion1-container input::placeholder {
+  margin-left: 5px;
+}
+.home-contactanos__seccion1-container button {
+  width: 100%;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  background-color: var(--azul-oscuro);
+  color: #fff;
+}
+.home-contactanos__seccion2 img {
+  width: 100%;
+}
