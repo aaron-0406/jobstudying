@@ -1,1 +1,56 @@
-<p>register works!</p>
+<body>
+  <div class = "container">
+    <div class = "titulo"> Registrarme</div>
+    <form action="#">
+      <div class = "user-details">
+        <div class = "input-box">
+          <span class = "details">Nombre</span>
+          <input type="text" placeholder="Ingrese su nombre" required>
+        </div>
+  
+        <div class = "input-box">
+          <span class = "details">Nombre de Usuario</span>
+          <input type="text" placeholder="Ingrese su nombre de usuario" required>
+        </div>
+  
+        <div class = "input-box">
+          <span class = "details">Email</span>
+          <input type="text" placeholder="Ingrese su email" required>
+        </div>
+  
+        <div class = "input-box">
+          <span class = "details">Contraseña</span>
+          <input type="text" placeholder="Ingrese su contraseña" required>
+        </div>
+  
+        <div class = "input-box">
+          <span class = "details">Confirmar contraseña</span>
+          <input type="password" placeholder="Ingrese su nuevamente su contraseña" required>
+        </div>
+      </div>
+
+      <button class="boton" (click)="show=!show">Registrar empresa</button>
+      <div class = "registro-empresa" *ngIf="show">
+        <span class = "empresa-titulo">Registro de la empresa</span>
+        <form action="#">
+          <div class = "empresa-details">
+            <div class = "input-box">
+              <span class = "details">Nombre de la empresa</span>
+              <input type="password" placeholder="Ingrese el nombre de la empresa" required>
+            </div>
+      
+            <div class = "input-box">
+              <span class = "details">Tipo de empresa</span>
+              <input type="text" placeholder="" required>
+            </div>
+          </div>
+        </form>
+
+      </div>
+  
+      <div class = "button">
+        <input type="submit" value="Registrar">
+      </div>
+    </form>
+  </div>
+</body>

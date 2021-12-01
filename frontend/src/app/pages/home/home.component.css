@@ -144,11 +144,18 @@ text-decoration: none;
   color: #fff
 }
 
+.container-equipo .equipo-titulo{
+  font-size: 30px;
+  font-weight: 500;
+  color: #156c9d
+}
+
 .container-equipo .list-image{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 
 .container-equipo .list-image li img {
   position: relative;
@@ -164,6 +171,10 @@ text-decoration: none;
   list-style: none;
 }
 
+.container-equipo .list-image li .information__image .name__image{
+  font-size: 15px;
+  font-weight: 500;
+}
 
 /*SECCION IMAGEN UNETE*/
 .unete{
@@ -179,10 +190,14 @@ text-decoration: none;
   margin: 60px 0px 60px 0px; 
   text-align: center; 
   margin-top: 160px;
-  color: #fff;
   padding: 10px;
-  font-size:large;
   display: inline-block;
+}
+
+.text h1{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .unete .text .mat-raised-button{
@@ -192,6 +207,7 @@ text-decoration: none;
 
 /*contactanos*/
 .home-contactanos{
+  margin-top: 50px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
