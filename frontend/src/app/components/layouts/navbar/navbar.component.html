@@ -10,6 +10,9 @@
       [ngClass]="{ navbarHide: showList, navbarShow: !showList }"
     >
 
+      <li><a routerLink="/home">Inicio</a></li>
+
+
       <li style=><a href="">Inicio</a></li>
       <li><a href="">Nosotros</a></li>
       <li><a href="">Equipo</a></li>
@@ -18,14 +21,8 @@
 
     </ul>
     <div class="navbar-button">
-      <button class="navbar-button__sesion" type="button">IS</button>
-      <button
-        class="navbar-button__toggle"
-        type="button"
-        (click)="onShowNavbar()"
-      >
-        PP
-      </button>
+      <a routerLink="/login" class="navbar-button__sesion">IS</a>
+      <a class="navbar-button__toggle" (click)="onShowNavbar()"> PP </a>
     </div>
   </div>
 </div>
