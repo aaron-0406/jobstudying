@@ -14,9 +14,15 @@ public class Usuario {
     @NotNull
     @Column(name = "nombre_usuario", nullable = false, length = 10)
     private String nombreUsuario;
+
     @NotNull
     @Column(name = "apellido_usuario", nullable = false, length = 20)
     private String apellidoUsuario;
+
+    //Tipos de usuario:
+    // * administrador
+    // * estudiante
+    // * empresa
     @NotNull
     @Column(name = "tipo_usuario", nullable = false, length = 20)
     private String tipoUsuario;
@@ -26,7 +32,7 @@ public class Usuario {
     private String contaseniaUsuario;
 
     @NotNull
-    @Column(name = "email_usuario", nullable = false, length = 20)
+    @Column(name = "email_usuario", nullable = false, length = 20, unique = true)
     private String emailUsuario;
     @NotNull
     @Column(name = "Telefono_usuario", nullable = false, length = 20)
@@ -37,8 +43,9 @@ public class Usuario {
 
     public Usuario(){}
 
-    public Usuario(Integer Id_Usuario, String apellidoUsuario, String tipoUsuario, String contaseniaUsuario, String emailUsuario, int telefonoUsuario, String generoUsuario) {
+    public Usuario(Integer Id_Usuario, String nombreUsuario, String apellidoUsuario, String tipoUsuario, String contaseniaUsuario, String emailUsuario, int telefonoUsuario, String generoUsuario) {
         this.Id_Usuario = Id_Usuario;
+        this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
         this.contaseniaUsuario = contaseniaUsuario;
         this.emailUsuario = emailUsuario;
