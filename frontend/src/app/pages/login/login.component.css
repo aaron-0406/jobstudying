@@ -92,3 +92,20 @@
   background-color: var(--azul-oscuro);
   color: #fff;
 }
+
+.login-container__registrate {
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111;
+}
+
+.login-container__registrate:hover {
+  background-color: var(--azul-oscuro);
+  color: #fff;
+}
