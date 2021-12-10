@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ofertas")
 public class OfertaController {
@@ -41,7 +40,6 @@ public class OfertaController {
     }
 
     //Listar oferta
-    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping
     public ResponseEntity<List<Oferta>> listarOfertas(){
         List<Oferta> listarOfertas = ofertaService.listarOferta();

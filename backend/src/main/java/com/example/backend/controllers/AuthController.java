@@ -2,8 +2,10 @@ package com.example.backend.controllers;
 
 import com.example.backend.dto.AuthenticationRequest;
 import com.example.backend.dto.AuthenticationResponse;
+import com.example.backend.model.Usuario;
 import com.example.backend.security.JWTUtil;
 import com.example.backend.services.AuthService;
+import com.example.backend.services.UsuarioService;
 import com.example.backend.services.impl.UserDetailsServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +13,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -24,13 +25,25 @@ public class AuthController {
     private final UserDetailsServiceImpl userDetailsService;
     private final JWTUtil jwtUtil;
     private final AuthService authService;
+    private final UsuarioService usuarioService;
     public AuthController(AuthenticationManager authenticationManager,
                           UserDetailsServiceImpl userDetailsService,
-                          AuthService authService, JWTUtil jwtUtil) {
+                          AuthService authService, JWTUtil jwtUtil, UsuarioService usuarioService) {
         this.authenticationManager = authenticationManager;
         this.userDetailsService = userDetailsService;
         this.jwtUtil = jwtUtil;
         this.authService = authService;
+        this.usuarioService = usuarioService;
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<Usuario> obtenerUsuario() {
+        try {
+            Usuario usuarioNew = usuarioService.obtenerUsuario(this.userDetailsService.getEmail());
+            return new ResponseEntity<Usuario>(usuarioNew, HttpStatus.OK);
+        } catch(BadCredentialsException e) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
     }
 
     @PostMapping("/authenticate")
@@ -45,7 +58,6 @@ public class AuthController {
                 UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
                 //Generar el JWT
                 String jwt = jwtUtil.generateToken(userDetails);
-
                 return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
             }
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);

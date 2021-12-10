@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface AuthRepository extends JpaRepository<Usuario, Integer> {
 
     @Query(value = "SELECT * FROM usuario WHERE email_usuario = ?1 AND contrasenia_usuario = ?2", nativeQuery = true)
-    Object validarDatos(String email, String password);
+    Usuario validarDatos(String email, String password);
 
 }
