@@ -14,6 +14,11 @@ import org.springframework.stereotype.Service;
         }
 
         @Override
+        public Usuario obtenerUsuario(String email) {
+            return usuarioRepository.obtenerUsuario(email);
+        }
+
+        @Override
         public Usuario createRegistro(Usuario usuario) {
             return usuarioRepository.save(usuario);
         }

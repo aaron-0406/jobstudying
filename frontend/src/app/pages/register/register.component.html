@@ -7,32 +7,68 @@
       <div class="user-details">
         <div class="input-box" [class.anchoMaximo]="!changeOption">
           <span class="details">Nombres</span>
-          <input [(ngModel)]="registerCompany.nombreUsuario" name="nombreUsuario" type="text" placeholder="Ingrese sus nombres" required />
+          <input
+            [(ngModel)]="registerCompany.nombreUsuario"
+            name="nombreUsuario"
+            type="text"
+            placeholder="Ingrese sus nombres"
+            required
+          />
         </div>
 
         <div class="input-box" *ngIf="changeOption">
           <span class="details">Apellidos</span>
-          <input [(ngModel)]="registerCompany.apellidoUsuario" name="apellidoUsuario" type="text" placeholder="Ingrese sus apellidos" required />
+          <input
+            [(ngModel)]="registerCompany.apellidoUsuario"
+            name="apellidoUsuario"
+            type="text"
+            placeholder="Ingrese sus apellidos"
+            required
+          />
         </div>
 
         <div class="input-box">
           <span class="details">Email</span>
-          <input [(ngModel)]="registerCompany.emailUsuario" name="emailUsuario" type="text" placeholder="Ingrese su email" required />
+          <input
+            [(ngModel)]="registerCompany.emailUsuario"
+            name="emailUsuario"
+            type="text"
+            placeholder="Ingrese su email"
+            required
+          />
         </div>
 
         <div class="input-box">
           <span class="details">Teléfono</span>
-          <input [(ngModel)]="registerCompany.telefonoUsuario" name="telefonoUsuario" type="number" placeholder="Ingrese su teléfono" required />
+          <input
+            [(ngModel)]="registerCompany.telefonoUsuario"
+            name="telefonoUsuario"
+            type="number"
+            placeholder="Ingrese su teléfono"
+            required
+          />
         </div>
 
         <div class="input-box">
           <span class="details">Contraseña</span>
-          <input [(ngModel)]="registerCompany.contaseniaUsuario" name="contaseniaUsuario" type="password" placeholder="Ingrese su contraseña" required />
+          <input
+            [(ngModel)]="registerCompany.contaseniaUsuario"
+            name="contaseniaUsuario"
+            type="password"
+            placeholder="Ingrese su contraseña"
+            required
+          />
         </div>
 
         <div class="input-box">
           <span class="details">Confirmar contraseña</span>
-          <input [(ngModel)]="confirmarContasenia" name="confirmarContraseña" type="password" placeholder="Ingrese nuevamente su contraseña" required />
+          <input
+            [(ngModel)]="confirmarContasenia"
+            name="confirmarContraseña"
+            type="password"
+            placeholder="Ingrese nuevamente su contraseña"
+            required
+          />
         </div>
       </div>
 
@@ -40,8 +76,7 @@
         >Registrar {{ changeOption ? "empresa" : "estudiante" }}</a
       >
 
-      <button class="boton anchoMaximo" type="submit" >Registrar</button>
-      
+      <button class="boton anchoMaximo" type="submit">Registrar</button>
     </form>
   </div>
 </body>

@@ -13,6 +13,9 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public boolean validatorDates(String email, String password) {
-        return authRepository.validarDatos(email, password) != null;
+        if(authRepository.validarDatos(email, password) != null){
+            return true;
+        }
+        return false;
     }
 }
