@@ -6,8 +6,6 @@ import { HomeComponent } from './website/pages/home/home.component';
 import { LoginComponent } from './website/pages/login/login.component';
 import { RegisterComponent } from './website/pages/register/register.component';
 import { NotFoundComponent } from './website/pages/not-found/not-found.component';
-import { EstudianteComponent } from './website/pages/estudiante/estudiante.component';
-import { EmpresaComponent } from './website/pages/empresa/empresa.component';
 
 const routes: Routes = [
   {
@@ -26,14 +24,6 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-  },
-  {
-    path: 'empresa',
-    component: EmpresaComponent,
-  },
-  {
-    path: 'estudiante',
-    component: EstudianteComponent,
   },
   {
     path: 'estudiante',

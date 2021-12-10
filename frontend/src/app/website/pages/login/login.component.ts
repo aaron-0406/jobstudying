@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.auth.loginAngGet(this.email, this.password).subscribe((user) => {
         this.profile = user;
         if (this.profile.tipoUsuario === 'Estudiante') {
-          this.router.navigate(['estudiante']);
+          this.router.navigate(['estudiante/perfil']);
         }
         if (this.profile.tipoUsuario === 'Empresa') {
           this.router.navigate(['empresa']);
