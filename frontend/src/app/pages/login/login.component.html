@@ -1,36 +1,40 @@
-        <div class="container">
-          <div class="center">
-            <div>
-                <h2 class="titulo-login,text-center">INICIAR SESIÓN</h2>
-            </div>
-            <br>
-            <div>
-              <img class="img-inicio" src="../../../assets/img/pngwing.com (1).png" alt="">
-            </div>
-            <br>
-            <div class="img-inicio" style="background-color: aliceblue;">
-
-            </div>
-            <div>
-
-              <input type="text" class="formulario" placeholder="Usuario o email">
-
-            </div>
-            <br>
-            <div>
-
-              <input type="password" class="formulario" placeholder="Contraseña">
-
-            </div>
-            <br>
-            <div>
-                <a href="" class="btn">Iniciar sesión</a>
-            </div>
-            <div>
-
-            </div>
-
-
+<div class="login">
+    <div class="login-container">
+      <p class="login-container__title">INICIA SESIÓN EN JOB STUDYING</p>
+      <img src="../../../assets/img/login.png" alt="login" />
+      <form (ngSubmit)="onLogin()" #myForm="ngForm">
+        <div>
+          <span class="details">E - mail</span>
+          <input
+            [(ngModel)]="email"
+            name="email"
+            type="email"
+            placeholder="Ingrese su email"
+            required
+          />
         </div>
-
-      </div>
+        <div>
+          <span class="details">Password</span>
+          <input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            placeholder="Ingrese su contraseña"
+            required
+          />
+        </div>
+  
+        <div class="login-container__error" *ngIf="showError">
+          <p>{{ messageError }}</p>
+        </div>
+  
+        <button class="login-container__login" type="submit">
+          Iniciar Sesión
+        </button>
+      </form>
+      <p class="login-container__parrafo">
+        ¿No tienes una cuenta en JOB STUDYING?
+      </p>
+      <a class="login-container__registrate" routerLink="/register">Registrate</a>
+    </div>
+  </div>
