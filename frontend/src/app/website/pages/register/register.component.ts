@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //models
-import { CreateUsuarioDTO } from '../../models/usuario';
+import { CreateUsuarioDTO } from '../../../models/usuario';
 
 @Component({
   selector: 'app-register',

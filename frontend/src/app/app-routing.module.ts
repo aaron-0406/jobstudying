@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //Pages
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { EstudianteComponent } from './pages/estudiante/estudiante.component';
-import { EmpresaComponent } from './pages/empresa/empresa.component';
+import { HomeComponent } from './website/pages/home/home.component';
+import { LoginComponent } from './website/pages/login/login.component';
+import { RegisterComponent } from './website/pages/register/register.component';
+import { NotFoundComponent } from './website/pages/not-found/not-found.component';
+import { EstudianteComponent } from './website/pages/estudiante/estudiante.component';
+import { EmpresaComponent } from './website/pages/empresa/empresa.component';
 
 const routes: Routes = [
   {
@@ -34,6 +34,11 @@ const routes: Routes = [
   {
     path: 'estudiante',
     component: EstudianteComponent,
+  },
+  {
+    path: 'estudiante',
+    loadChildren: () =>
+      import('./estudiante/estudiante.module').then((m) => m.EstudianteModule),
   },
   {
     path: '**',
