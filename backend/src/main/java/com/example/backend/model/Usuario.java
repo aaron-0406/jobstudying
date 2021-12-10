@@ -35,7 +35,7 @@ public class Usuario {
     @Column(name = "email_usuario", nullable = false, length = 20, unique = true)
     private String emailUsuario;
     @NotNull
-    @Column(name = "Telefono_usuario", nullable = false, length = 20)
+    @Column(name = "telefono_usuario", nullable = false, length = 20)
     private int telefonoUsuario;
     @NotNull
     @Column(name = "genero_usuario", nullable = false, length = 20)
