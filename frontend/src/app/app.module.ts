@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './website/pages/home/home.component';
-import { NavbarComponent } from './website/components/layouts/navbar/navbar.component';
-import { FooterComponent } from './website/components/layouts/footer/footer.component';
 import { LoginComponent } from './website/pages/login/login.component';
 import { RegisterComponent } from './website/pages/register/register.component';
 import { NotFoundComponent } from './website/pages/not-found/not-found.component';
@@ -19,8 +17,6 @@ import { MaterialModule } from './material.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    FooterComponent,
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,

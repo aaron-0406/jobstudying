@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 
 //components
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './components/layouts/layout/layout.component';
 
 const routes: Routes = [
   {

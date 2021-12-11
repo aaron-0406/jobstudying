@@ -72,6 +72,10 @@
         </div>
       </div>
 
+      <div class="showError" *ngIf="showError">
+        <p>{{ messageError }}</p>
+      </div>
+
       <a class="boton" (click)="onChangeOption()"
         >Registrar {{ changeOption ? "empresa" : "estudiante" }}</a
       >

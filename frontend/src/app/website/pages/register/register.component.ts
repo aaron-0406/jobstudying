@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 //models
 import { CreateUsuarioDTO } from '../../../models/usuario';
+
+//services
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,29 +21,69 @@ export class RegisterComponent implements OnInit {
     emailUsuario: '',
     telefonoUsuario: 0,
     generoUsuario: '',
-  }
+  };
 
   confirmarContasenia: string = '';
 
   changeOption: boolean = true;
+  showError: boolean = false;
+  messageError: string = '';
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
-  
-  onChangeOption(){
+
+  onChangeOption() {
     this.changeOption = !this.changeOption;
-    if (this.changeOption){
-      this.registerCompany.tipoUsuario = "estudiante"; 
+    if (this.changeOption) {
+      this.registerCompany.tipoUsuario = 'estudiante';
     }
-    if (!this.changeOption){
-      this.registerCompany.tipoUsuario = "empresa";
+    if (!this.changeOption) {
+      this.registerCompany.tipoUsuario = 'empresa';
     }
   }
 
   onRegister(): void {
-    if (this.registerCompany.contaseniaUsuario === this.confirmarContasenia){
-      console.log(this.registerCompany);
+    if (this.changeOption) {
+      if (
+        this.registerCompany.nombreUsuario &&
+        this.registerCompany.apellidoUsuario &&
+        this.registerCompany.emailUsuario &&
+        this.registerCompany.telefonoUsuario &&
+        this.registerCompany.contaseniaUsuario &&
+        this.confirmarContasenia
+      ) {
+        if (
+          this.registerCompany.contaseniaUsuario === this.confirmarContasenia
+        ) {
+          this.showError = false;
+          this.messageError = '';
+          //registrarse
+          this.registerCompany.tipoUsuario = 'Estudiante';
+          this.registerCompany.generoUsuario = 'Desconocido';
+          this.auth.register(this.registerCompany).subscribe((data) => {
+            console.log(data);
+            if (data) {
+              this.router.navigate(['login']);
+            }
+          });
+        } else {
+          this.showError = true;
+          this.messageError = 'Las contraseñas deben ser iguales';
+        }
+      } else {
+        this.showError = true;
+        this.messageError = 'Complete todas las casillas para registrarse.';
+      }
+    } else {
+      if (
+        this.registerCompany.nombreUsuario &&
+        this.registerCompany.emailUsuario &&
+        this.registerCompany.telefonoUsuario &&
+        this.registerCompany.contaseniaUsuario &&
+        this.confirmarContasenia
+      ) {
+      }
     }
   }
 }

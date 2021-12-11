@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -7,7 +7,7 @@ body{
   background: linear-gradient(135deg, #156c9d, #89cff8);
 }
 
-.container{
+.container {
   max-width: 700px;
   width: flex;
   background: #fff;
@@ -15,14 +15,14 @@ body{
   border-radius: 5px;
 }
 
-.container .titulo{
+.container .titulo {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
 
-.container .titulo::before{
-  content: '';
+.container .titulo::before {
+  content: "";
   position: absolute;
   bottom: 0;
   height: 3px;
@@ -30,29 +30,29 @@ body{
   background: linear-gradient(135deg, #156c9d, #89cff8);
 }
 
-.container form .user-details{
+.container form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
 
-form .user-details .input-box{
+form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
-.anchoMaximo{
+.anchoMaximo {
   width: 100% !important;
 }
 
-.user-details .input-box .details{
+.user-details .input-box .details {
   display: block;
   font-size: 500;
   margin-bottom: 5px;
 }
 
-.user-details .input-box input{
+.user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -65,14 +65,14 @@ form .user-details .input-box{
 }
 
 .user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:valid {
   border-color: #156c9d;
 }
 
-.boton{
+.boton {
   display: flex;
   margin-bottom: 10px;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   width: 150px;
   height: 35px;
@@ -84,14 +84,14 @@ form .user-details .input-box{
   background: linear-gradient(135deg, #156c9d, #89cff8);
 }
 
-.registro-empresa .empresa-titulo{
+.registro-empresa .empresa-titulo {
   font-size: 20px;
   font-weight: 500;
   position: relative;
 }
 
-.registro-empresa .empresa-titulo::before{
-  content: '';
+.registro-empresa .empresa-titulo::before {
+  content: "";
   position: absolute;
   bottom: 0;
   height: 3px;
@@ -99,25 +99,25 @@ form .user-details .input-box{
   background: linear-gradient(135deg, #156c9d, #89cff8);
 }
 
-.registro-empres form .empresa-details{
+.registro-empres form .empresa-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
 
-form .empresa-details .input-box{
+form .empresa-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
-.empresa-details .input-box .details{
+.empresa-details .input-box .details {
   display: block;
   font-size: 500;
   margin-bottom: 5px;
 }
 
-.empresa-details .input-box input{
+.empresa-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -130,16 +130,16 @@ form .empresa-details .input-box{
 }
 
 .empresa-details .input-box input:focus,
-.empresa-details .input-box input:valid{
+.empresa-details .input-box input:valid {
   border-color: #156c9d;
 }
 
-.button{
+.button {
   height: 45px;
   margin: 45px 0;
 }
 
-form .button input{
+form .button input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -152,7 +152,20 @@ form .button input{
   background: linear-gradient(135deg, #156c9d, #89cff8);
 }
 
-form .button input:hover{
+form .button input:hover {
   background: linear-gradient(-135deg, #156c9d, #89cff8);
 }
 
+.showError {
+  background-color: #ff9784;
+  width: 100%;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.showError p {
+  margin: 0;
+}

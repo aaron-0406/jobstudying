@@ -26,6 +26,7 @@ export class PerfilComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
+    this.auth.getDataProfile();
     this.auth.usuarioGlobal$.subscribe((user) => {
       this.usuario = user;
     });
