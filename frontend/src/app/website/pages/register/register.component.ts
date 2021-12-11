@@ -83,6 +83,25 @@ export class RegisterComponent implements OnInit {
         this.registerCompany.contaseniaUsuario &&
         this.confirmarContasenia
       ) {
+        if (
+          this.registerCompany.contaseniaUsuario === this.confirmarContasenia
+        ) {
+          this.showError = false;
+          this.messageError = '';
+          //registrarse
+          this.registerCompany.tipoUsuario = 'Empresa';
+          this.registerCompany.apellidoUsuario = 'Desconocido';
+          this.registerCompany.generoUsuario = 'Desconocido';
+          this.auth.register(this.registerCompany).subscribe((data) => {
+            console.log(data);
+            if (data) {
+              this.router.navigate(['login']);
+            }
+          });
+        } else {
+          this.showError = true;
+          this.messageError = 'Las contraseñas deben ser iguales';
+        }
       }
     }
   }

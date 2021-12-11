@@ -10,7 +10,7 @@
   <div class="perfil-estudiante-body">
     <div class="perfil-estudiante-bio">
       <h1 class="titulo">{{ usuario.nombreUsuario }}</h1>
-      <p class="texto">Estudiante de Ingenieria de Computación y Sistemas</p>
+      <p class="texto">Empresa tecnológica</p>
     </div>
 
     <button class="boton-recomendar" type="submit">Recomendar</button>
@@ -19,16 +19,9 @@
   <div class="container-footer">
     <div class="perfil-estudiante-footer1">
       <div class="informacion">
-        <h2 class="titulo-informacion">Información Personal</h2>
+        <h2 class="titulo-informacion">Información de Empresa</h2>
         <li>
-          <p>Nombres: {{ usuario.nombreUsuario }}</p>
-        </li>
-        <li>
-          <p>Apellidos: {{ usuario.apellidoUsuario }}</p>
-        </li>
-        <li><p>DNI:</p></li>
-        <li>
-          <p>Sexo: {{ usuario.generoUsuario }}</p>
+          <p>Empresa: {{ usuario.nombreUsuario }}</p>
         </li>
         <li>
           <p>Correo electronico: {{ usuario.emailUsuario }}</p>
@@ -45,7 +38,7 @@
     <div class="perfil-estudiante-footer2">
       <div class="informacion">
         <div class="informacion-container">
-          <h2 class="titulo-informacion">Información Academica</h2>
+          <h2 class="titulo-informacion">Ofertas Laborales</h2>
           <button class="boton" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
