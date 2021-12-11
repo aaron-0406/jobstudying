@@ -6,6 +6,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { NavbarComponent } from './components/layouts/navbar/navbar.component';
 import { LayoutComponent } from './components/layouts/layout/layout.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { ModalOfertaComponent } from './components/views/modal-oferta/modal-oferta.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FooterComponent } from './components/layouts/footer/footer.component';
     PerfilComponent,
     NavbarComponent,
     LayoutComponent,
-    FooterComponent
+    FooterComponent,
+    ModalOfertaComponent
   ],
   imports: [
     CommonModule,
