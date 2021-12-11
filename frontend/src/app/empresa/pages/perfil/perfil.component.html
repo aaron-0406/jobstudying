@@ -1,0 +1,86 @@
+<section class="seccion-perfil-estudiante">
+  <div class="perfil-estudiante-header">
+    <div class="perfil-estudiante-portada">
+      <div class="perfil-estudiante-avatar">
+        <img src="./../../../../assets/img/usuario.png" alt="img-avatar" />
+      </div>
+    </div>
+  </div>
+
+  <div class="perfil-estudiante-body">
+    <div class="perfil-estudiante-bio">
+      <h1 class="titulo">{{ usuario.nombreUsuario }}</h1>
+      <p class="texto">Empresa tecnológica</p>
+    </div>
+
+    <button class="boton-recomendar" type="submit">Recomendar</button>
+  </div>
+
+  <div class="container-footer">
+    <div class="perfil-estudiante-footer1">
+      <div class="informacion">
+        <h2 class="titulo-informacion">Información de Empresa</h2>
+        <li>
+          <p>Empresa: {{ usuario.nombreUsuario }}</p>
+        </li>
+        <li>
+          <p>Correo electronico: {{ usuario.emailUsuario }}</p>
+        </li>
+        <li>
+          <p>Telefono: {{ usuario.telefonoUsuario }}</p>
+        </li>
+        <li><p>Direccion:</p></li>
+        <li><p>Redes sociales:</p></li>
+      </div>
+      <button class="boton" type="submit">Editar perfil</button>
+    </div>
+
+    <div class="perfil-estudiante-footer2">
+      <div class="informacion">
+        <div class="informacion-container">
+          <h2 class="titulo-informacion">Ofertas Laborales</h2>
+          <button class="boton" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+              />
+            </svg>
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="perfil-estudiante-footer3">
+      <div class="informacion">
+        <div class="informacion-container">
+          <h2 class="titulo-informacion">Experiencia Laboral</h2>
+          <button class="boton" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+              />
+            </svg>
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,129 @@
+.seccion-perfil-estudiante {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#156c9d, transparent);
+  margin-bottom: 1.5rem;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-portada {
+  display: block;
+  position: relative;
+  width: 90%;
+  height: 17rem;
+  background: linear-gradient(135deg, #156c9d, #89cff8);
+  border-radius: 0 0 20px 20px;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-avatar {
+  display: flex;
+  width: 180px;
+  height: 180px;
+  align-items: center;
+  justify-content: center;
+  border: 7px solid #fff;
+  background-color: rgb(199, 199, 199);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: -40px;
+  left: calc(10% - 90px);
+}
+
+.perfil-estudiante-avatar img {
+  width: 180px;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-body {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.perfil-estudiante-body button {
+  margin-bottom: 30px;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-footer1,
+.seccion-perfil-estudiante .perfil-estudiante-footer2,
+.seccion-perfil-estudiante .perfil-estudiante-footer3,
+.seccion-perfil-estudiante .perfil-estudiante-bio {
+  display: block;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 15px;
+  width: 80%;
+}
+
+.seccion-perfil-estudiante .boton-recomendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 35px;
+  color: #fff;
+  border-color: aliceblue;
+  font-size: 15px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+  background: #156c9d;
+  margin-left: 5rem;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-bio {
+  margin-bottom: 2rem;
+}
+
+.container-footer {
+  display: flex;
+  width: 90%;
+}
+
+.seccion-perfil-estudiante .informacion {
+  list-style: none;
+}
+
+.seccion-perfil-estudiante .perfil-estudiante-footer1 {
+  margin-bottom: 1rem;
+  width: 700px;
+  margin-right: 10px;
+}
+.seccion-perfil-estudiante .perfil-estudiante-footer2 {
+  margin-bottom: 1rem;
+  margin-right: 10px;
+}
+
+.container-footer .boton {
+  background: #156c9d;
+  color: #fff;
+  width: 120px;
+  height: 35px;
+  border-color: aliceblue;
+  border-radius: 5px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.informacion-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.informacion-container h2 {
+  margin: 0;
+}
+
+.informacion-container button {
+  margin: 0;
+}

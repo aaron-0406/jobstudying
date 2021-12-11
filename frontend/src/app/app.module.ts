@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
 
+//pages and components
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './website/pages/home/home.component';
@@ -12,7 +14,6 @@ import { NotFoundComponent } from './website/pages/not-found/not-found.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
-import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,

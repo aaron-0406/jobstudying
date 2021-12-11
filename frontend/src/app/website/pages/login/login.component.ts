@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['estudiante/perfil']);
         }
         if (this.profile.tipoUsuario === 'Empresa') {
-          this.router.navigate(['empresa']);
+          this.router.navigate(['empresa/perfil']);
         }
 
         console.log(this.profile);
