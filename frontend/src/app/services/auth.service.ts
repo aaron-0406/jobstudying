@@ -6,16 +6,19 @@ import { environment } from 'src/environments/environment';
 
 //models
 import { Auth } from '../models/auth';
-import { Usuario } from '../models/usuario';
+import { Usuario, CreateUsuarioDTO } from '../models/usuario';
 
 //services
 import { TokenService } from './token.service';
+
+//interceptors
+import { checkToken } from '../interceptors/token.interceptor';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = `${environment.API}/auth`;
+  private apiUrl = `${environment.API}`;
 
   private usuarioGlobal = new BehaviorSubject<Usuario>({
     id: '',
@@ -34,7 +37,7 @@ export class AuthService {
 
   login(username: string, password: string) {
     return this.http
-      .post<Auth>(`${this.apiUrl}/authenticate`, {
+      .post<Auth>(`${this.apiUrl}/auth/authenticate`, {
         username,
         password,
       })
@@ -48,16 +51,29 @@ export class AuthService {
       );
   }
 
+  register(usuario: CreateUsuarioDTO) {
+    return this.http.post<CreateUsuarioDTO>(
+      `${this.apiUrl}/usuario/register`,
+      usuario,
+      {
+        context: checkToken(),
+      }
+    );
+  }
+
   getProfile() {
-    return this.http.get<Usuario>(`${this.apiUrl}/profile`);
+    return this.http.get<Usuario>(`${this.apiUrl}/usuario/profile`);
+  }
+
+  getDataProfile() {
+    this.getProfile().subscribe((data) => {
+      this.usuarioGlobal.next(data);
+    });
   }
 
   loginAngGet(email: string, password: string) {
     return this.login(email, password).pipe(
       switchMap(() => {
-        this.getProfile().subscribe((data) => {
-          this.usuarioGlobal.next(data);
-        });
         return this.getProfile();
       })
     );

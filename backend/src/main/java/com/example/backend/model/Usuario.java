@@ -12,11 +12,11 @@ public class Usuario {
     private Integer Id_Usuario;
 
     @NotNull
-    @Column(name = "nombre_usuario", nullable = false, length = 10)
+    @Column(name = "nombre_usuario", nullable = false, length = 50)
     private String nombreUsuario;
 
     @NotNull
-    @Column(name = "apellido_usuario", nullable = false, length = 20)
+    @Column(name = "apellido_usuario", nullable = false, length = 50)
     private String apellidoUsuario;
 
     //Tipos de usuario:
@@ -32,10 +32,10 @@ public class Usuario {
     private String contaseniaUsuario;
 
     @NotNull
-    @Column(name = "email_usuario", nullable = false, length = 20, unique = true)
+    @Column(name = "email_usuario", nullable = false, length = 50, unique = true)
     private String emailUsuario;
     @NotNull
-    @Column(name = "Telefono_usuario", nullable = false, length = 20)
+    @Column(name = "telefono_usuario", nullable = false, length = 20)
     private int telefonoUsuario;
     @NotNull
     @Column(name = "genero_usuario", nullable = false, length = 20)

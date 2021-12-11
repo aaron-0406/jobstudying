@@ -4,11 +4,18 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
+  HttpContext,
+  HttpContextToken,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 //services
 import { TokenService } from '../services/token.service';
+
+const CHECK_TOKEN = new HttpContextToken<boolean>(() => true);
+export function checkToken() {
+  return new HttpContext().set(CHECK_TOKEN, false);
+}
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -18,8 +25,11 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log(this.tokenService.getToken());
-    request = this.addToken(request);
+    if (request.context.get(CHECK_TOKEN)) {
+      console.log(this.tokenService.getToken());
+      request = this.addToken(request);
+      return next.handle(request);
+    }
     return next.handle(request);
   }
 

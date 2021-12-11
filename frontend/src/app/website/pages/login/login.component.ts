@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 //models
-import { Usuario } from '../../models/usuario';
+import { Usuario } from '../../../models/usuario';
 
 //services
-import { AuthService } from './../../services/auth.service'; 
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
       this.auth.loginAngGet(this.email, this.password).subscribe((user) => {
         this.profile = user;
         if (this.profile.tipoUsuario === 'Estudiante') {
-          this.router.navigate(['estudiante']);
+          this.router.navigate(['estudiante/perfil']);
         }
         if (this.profile.tipoUsuario === 'Empresa') {
-          this.router.navigate(['empresa']);
+          this.router.navigate(['empresa/perfil']);
         }
 
         console.log(this.profile);

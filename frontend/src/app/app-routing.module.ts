@@ -2,38 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //Pages
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { EstudianteComponent } from './pages/estudiante/estudiante.component';
-import { EmpresaComponent } from './pages/empresa/empresa.component';
+import { NotFoundComponent } from './website/pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: 'empresa',
-    component: EmpresaComponent,
+    loadChildren: () =>
+      import('./website/website.module').then((m) => m.WebsiteModule),
   },
   {
     path: 'estudiante',
-    component: EstudianteComponent,
+    loadChildren: () =>
+      import('./estudiante/estudiante.module').then((m) => m.EstudianteModule),
+  },
+  {
+    path: 'empresa',
+    loadChildren: () =>
+      import('./empresa/empresa.module').then((aaron) => aaron.EmpresaModule),
   },
   {
     path: '**',
