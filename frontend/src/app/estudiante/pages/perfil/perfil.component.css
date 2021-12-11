@@ -37,9 +37,18 @@
   left: calc(10% - 90px);
 }
 
+.perfil-estudiante-avatar img {
+  width: 180px;
+}
+
 .seccion-perfil-estudiante .perfil-estudiante-body {
   width: 90%;
   display: flex;
+  align-items: center;
+}
+
+.perfil-estudiante-body button {
+  margin-bottom: 30px;
 }
 
 .seccion-perfil-estudiante .perfil-estudiante-footer1,
@@ -76,7 +85,6 @@
 .container-footer {
   display: flex;
   width: 90%;
-  justify-content: center;
 }
 
 .seccion-perfil-estudiante .informacion {
@@ -85,11 +93,12 @@
 
 .seccion-perfil-estudiante .perfil-estudiante-footer1 {
   margin-bottom: 1rem;
-  margin-right: 7rem;
+  width: 700px;
+  margin-right: 10px;
 }
 .seccion-perfil-estudiante .perfil-estudiante-footer2 {
   margin-bottom: 1rem;
-  margin-right: 7rem;
+  margin-right: 10px;
 }
 
 .container-footer .boton {
@@ -103,4 +112,18 @@
   letter-spacing: 0.5px;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+.informacion-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.informacion-container h2 {
+  margin: 0;
+}
+
+.informacion-container button {
+  margin: 0;
 }
