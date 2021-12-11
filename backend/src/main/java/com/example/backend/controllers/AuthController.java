@@ -36,17 +36,6 @@ public class AuthController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/profile")
-    public ResponseEntity<Usuario> obtenerUsuario() {
-        try {
-            Usuario usuarioNew = usuarioService.obtenerUsuario(this.userDetailsService.getEmail());
-            usuarioNew.setContaseniaUsuario("");
-            return new ResponseEntity<Usuario>(usuarioNew, HttpStatus.OK);
-        } catch(BadCredentialsException e) {
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-        }
-    }
-
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> createToken(@RequestBody AuthenticationRequest request) {
         try {

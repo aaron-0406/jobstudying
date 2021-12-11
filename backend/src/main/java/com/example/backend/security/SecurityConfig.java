@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //Todas las peticiones que terminan en /authenticate se deben permitir sin authentificar
-        http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate", "/**/usuario").permitAll()
+        http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate", "/**/usuario/register").permitAll()
                 .anyRequest().authenticated().and()
                 //Sin session -> STATELESS -> se maneja con tokens
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
