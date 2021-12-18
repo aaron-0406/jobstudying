@@ -1,0 +1,25 @@
+.navbar-estudiante{
+    background-color: var(--azul-oscuro);
+}
+
+.navbar-container{
+    width: 100%;
+    max-width: 1120px;
+    height: 121px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.navbar-logo {
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    margin-top: auto;
+  
+  }
+
+

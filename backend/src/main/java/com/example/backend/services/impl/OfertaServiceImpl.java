@@ -14,21 +14,25 @@ public class OfertaServiceImpl implements OfertaService {
     private OfertaRepository ofertaRepository;
 
     public OfertaServiceImpl(OfertaRepository ofertaRepository) {
+
         this.ofertaRepository = ofertaRepository;
     }
 
     @Override
     public Oferta createOferta(Oferta oferta) {
+
         return ofertaRepository.save(oferta);
     }
 
     @Override
     public Oferta updateOferta(Oferta oferta) {
+
         return ofertaRepository.save(oferta);
     }
 
     @Override
     public List<Oferta> listarOferta() {
+
         return ofertaRepository.findAll();
     }
 
