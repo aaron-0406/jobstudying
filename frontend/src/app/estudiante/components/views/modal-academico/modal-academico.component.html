@@ -1,0 +1,50 @@
+<div class="fondo_transparente" [ngClass]="{ showModal: showModal }">
+  <div class="modal">
+    <div class="modal_cerrar">
+      <span (click)="onShowModal()">x</span>
+    </div>
+    <div class="modal_titulo">INFORMACIÓN ACADÉMICA</div>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <div class="modal_mensaje">
+        <span class="modal_details">ID</span>
+        <input
+          [(ngModel)]="formacionAcademica.idFormacion"
+          name="idFormacion"
+          type="number"
+          placeholder=""
+          disabled
+        />
+        <span class="modal_details">Institución</span>
+        <input
+          [(ngModel)]="formacionAcademica.institucion"
+          name="institucion"
+          type="text"
+          placeholder="Institución"
+          required
+        />
+        <span class="modal_details">Fecha Inicio</span>
+        <input
+          [(ngModel)]="formacionAcademica.fechaInicio"
+          name="fechaInicio"
+          type="date"
+          placeholder="Fecha Inicio"
+          required
+        />
+        <span class="modal_details">Fecha Fin</span>
+        <input
+          [(ngModel)]="formacionAcademica.fechaFin"
+          name="fechaFin"
+          type="date"
+          placeholder="Fecha Fin"
+          required
+        />
+      </div>
+      <div class="modal_botones">
+        <a class="boton" (click)="onShowModal()">Cerrar</a>
+        <button class="boton" type="submit">
+          {{ accion ? "Modificar" : "Agregar" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

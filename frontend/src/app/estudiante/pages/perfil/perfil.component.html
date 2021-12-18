@@ -43,7 +43,7 @@
       <div class="informacion">
         <div class="informacion-container">
           <h2 class="titulo-informacion">Información Academica</h2>
-          <button class="boton" type="submit">
+          <button class="boton" type="button" (click)="onShowModal()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -59,6 +59,28 @@
             </svg>
             Agregar
           </button>
+        </div>
+        <div
+          class="item-formacion"
+          *ngFor="let formacion of formacion_academica; index as id"
+        >
+          <div>
+            <p class="item-formacion__institucion">
+              {{ formacion.institucion }}
+            </p>
+            <p class="item-formacion__fechas">
+              {{ formacion.fechaInicio }} --- {{ formacion.fechaFin }}
+            </p>
+          </div>
+
+          <div>
+            <button (click)="onModificarModal(formacion.idFormacion)">
+              Editar
+            </button>
+            <button (click)="onEliminarFormacion(formacion.idFormacion, id)">
+              Eliminar
+            </button>
+          </div>
         </div>
       </div>
     </div>

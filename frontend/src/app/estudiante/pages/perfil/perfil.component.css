@@ -118,6 +118,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .informacion-container h2 {
@@ -126,4 +127,36 @@
 
 .informacion-container button {
   margin: 0;
+}
+
+.showModal {
+  display: block;
+}
+
+.item-formacion {
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-formacion p {
+  margin: 0;
+}
+
+.item-formacion__institucion {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.item-formacion__fechas {
+  font-weight: bold;
+}
+
+.item-formacion button {
+  margin-left: 5px;
+  height: 30px;
+  background-color: rgb(172, 178, 185);
+  border: none;
 }
