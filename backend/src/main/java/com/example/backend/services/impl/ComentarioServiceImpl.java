@@ -49,7 +49,7 @@ public class ComentarioServiceImpl implements ComentarioService {
 
     @Override
     public List<Comentario> listComentariosOferta(Oferta oferta) {
-        List<Comentario> listComentarios=comentarioRepository.findByOferta(oferta.getIdOferta());
+        List<Comentario> listComentarios=comentarioRepository.findAll();
         return listComentarios;
     }
 }
