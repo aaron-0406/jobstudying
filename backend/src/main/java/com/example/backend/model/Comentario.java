@@ -2,10 +2,14 @@ package com.example.backend.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
+@Table(name="comentario")
 public class Comentario {
 
     @Id
@@ -28,15 +32,19 @@ public class Comentario {
     @Column(name = "descripcion_comentario", nullable = true, length = 200)
     private String descripcionComentario;
 
+    @NotNull
+    @Column(name = "fecha_comentario", nullable = false)
+    private Date fechaComentario;
 
     public Comentario() {
     }
 
-    public Comentario(Integer idComentario, Oferta oferta, Usuario usuario, String descripcionComentario) {
+    public Comentario(Integer idComentario, Oferta oferta, Usuario usuario, String descripcionComentario,Date fechaComentario) {
         this.idComentario = idComentario;
         this.oferta = oferta;
         this.usuario = usuario;
         this.descripcionComentario = descripcionComentario;
+        this.fechaComentario=fechaComentario;
     }
 
     public Integer getIdComentario() {
@@ -69,5 +77,12 @@ public class Comentario {
 
     public void setDescripcionComentario(String descripcionComentario) {
         this.descripcionComentario = descripcionComentario;
+    }
+
+    public Date getFechaComentario() {return fechaComentario;
+    }
+
+    public void setFechaComentario(Date fechaComentario) {
+        this.fechaComentario = fechaComentario;
     }
 }

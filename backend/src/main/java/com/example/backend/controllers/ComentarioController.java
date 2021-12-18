@@ -19,6 +19,7 @@ public class ComentarioController {
     @Autowired
     private ComentarioService comentarioService;
 
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET})
     @GetMapping(value = "{id}")
     public ResponseEntity<Comentario> findComentario(@PathVariable("id") Integer id) {
         Comentario comentario = comentarioService.findComentario(id);
@@ -26,6 +27,7 @@ public class ComentarioController {
         return ResponseEntity.ok(comentario);
     }
 
+    @CrossOrigin(origins = "*",methods = {RequestMethod.POST})
     @PostMapping
     public ResponseEntity<Comentario> createComentario(@RequestBody Comentario comentario) {
         Comentario comentarioCreate = comentarioService.createComentario(comentario);

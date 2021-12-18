@@ -11,5 +11,5 @@ import java.util.List;
 public interface ComentarioRepository extends JpaRepository<Comentario, Integer> {
 
 
-    List<Comentario> findByOferta(Integer idOferta);
+    List<Comentario> findByOferta(Oferta oferta);
 }
