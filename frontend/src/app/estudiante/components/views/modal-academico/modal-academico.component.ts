@@ -34,6 +34,7 @@ export class ModalAcademicoComponent implements OnInit {
   }
 
   onSubmit() {
+    //MODIFICAR
     if (this.accion) {
       this.formacionAcademica.idFormacion;
       this.formacionAcademicaService
@@ -42,6 +43,7 @@ export class ModalAcademicoComponent implements OnInit {
           this.agregarFormacion.emit(data);
         });
     }
+    //AGREGAR
     if (!this.accion) {
       this.formacionAcademicaService
         .create(this.formacionAcademica)
