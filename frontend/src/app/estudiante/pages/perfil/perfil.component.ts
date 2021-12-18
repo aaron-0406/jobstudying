@@ -3,18 +3,12 @@ import { Component, OnInit } from '@angular/core';
 //models
 import { Usuario } from 'src/app/models/usuario';
 import { FormacionAcademica } from 'src/app/models/formacion-academica';
-<<<<<<< HEAD
 import { ExperienciaLaboral } from 'src/app/models/experiencia-laboral';
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
 
 //services
 import { AuthService } from 'src/app/services/auth.service';
 import { FormacionAcademicaService } from 'src/app/services/formacion-academica.service';
-<<<<<<< HEAD
 import { ExperienciaLaboralService } from 'src/app/services/experiencia-laboral.service';
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
 
 @Component({
   selector: 'app-perfil',
@@ -35,10 +29,7 @@ export class PerfilComponent implements OnInit {
 
   //Listas a mostrar
   formacion_academica: FormacionAcademica[] = [];
-<<<<<<< HEAD
   experiencia_laboral: ExperienciaLaboral[] = [];
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
 
   //Formación académica
   showModal: boolean = false;
@@ -50,7 +41,6 @@ export class PerfilComponent implements OnInit {
     fechaFin: new Date(),
   };
 
-<<<<<<< HEAD
   //Experiencia Laboral
   showModalE: boolean = false;
   accionE: boolean = true;
@@ -67,11 +57,6 @@ export class PerfilComponent implements OnInit {
     private auth: AuthService,
     private formacionAcademicaService: FormacionAcademicaService,
     private experienciaLaboralService: ExperienciaLaboralService
-=======
-  constructor(
-    private auth: AuthService,
-    private formacionAcademicaService: FormacionAcademicaService
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   ) {}
 
   ngOnInit(): void {
@@ -83,13 +68,10 @@ export class PerfilComponent implements OnInit {
     this.formacionAcademicaService.getAll().subscribe((data) => {
       this.formacion_academica = data;
     });
-<<<<<<< HEAD
 
     this.experienciaLaboralService.getAll().subscribe((data) => {
       this.experiencia_laboral = data;
     });
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   }
 
   onShowModal() {
@@ -104,7 +86,6 @@ export class PerfilComponent implements OnInit {
     };
   }
 
-<<<<<<< HEAD
   onShowModalE() {
     this.showModalE = !this.showModalE;
     this.accionE = false;
@@ -119,8 +100,6 @@ export class PerfilComponent implements OnInit {
     };
   }
 
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   onModificarModal(id: number) {
     this.showModal = !this.showModal;
     this.accion = true;
@@ -138,7 +117,6 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   onModificarModalE(id: number) {
     this.showModalE = !this.showModalE;
     this.accionE = true;
@@ -158,8 +136,6 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   onEliminarFormacion(id: number, posicion: number) {
     console.log(id);
     console.log(posicion);
@@ -171,7 +147,6 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   onEliminarFormacionE(id: number, posicion: number) {
     this.experienciaLaboralService.delete(id).subscribe((data) => {
       if (data === null) {
@@ -181,19 +156,14 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   onResponseModal(show: boolean) {
     this.showModal = show;
   }
 
-<<<<<<< HEAD
   onResponseModalE(show: boolean) {
     this.showModalE = show;
   }
 
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   actualizarListaFA(formacion: FormacionAcademica) {
     if (this.accion) {
       this.formacion_academica.map((formacionNew, i) => {
@@ -207,7 +177,6 @@ export class PerfilComponent implements OnInit {
     if (!this.accion) {
       this.formacion_academica.push(formacion);
     }
-<<<<<<< HEAD
   }
 
   actualizarListaFAE(experiencia: ExperienciaLaboral) {
@@ -227,7 +196,5 @@ export class PerfilComponent implements OnInit {
     if (!this.accionE) {
       this.experiencia_laboral.push(experiencia);
     }
-=======
->>>>>>> ebe2ad5adafbfd52ad2434c6d07e2ed014bb4c9f
   }
 }
