@@ -43,7 +43,7 @@
       <div class="informacion">
         <div class="informacion-container">
           <h2 class="titulo-informacion">Información Academica</h2>
-          <button class="boton" type="submit">
+          <button class="boton" type="button" (click)="onShowModal()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -59,6 +59,28 @@
             </svg>
             Agregar
           </button>
+        </div>
+        <div
+          class="item-formacion"
+          *ngFor="let formacion of formacion_academica; index as id"
+        >
+          <div>
+            <p class="item-formacion__institucion">
+              {{ formacion.institucion }}
+            </p>
+            <p class="item-formacion__fechas">
+              {{ formacion.fechaInicio }} --- {{ formacion.fechaFin }}
+            </p>
+          </div>
+
+          <div>
+            <button (click)="onModificarModal(formacion.idFormacion)">
+              Editar
+            </button>
+            <button (click)="onEliminarFormacion(formacion.idFormacion, id)">
+              Eliminar
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -67,7 +89,7 @@
       <div class="informacion">
         <div class="informacion-container">
           <h2 class="titulo-informacion">Experiencia Laboral</h2>
-          <button class="boton" type="submit">
+          <button class="boton" type="submit" (click)="onShowModalE()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -84,7 +106,46 @@
             Agregar
           </button>
         </div>
+        <div
+          class="item-formacion"
+          *ngFor="let experiencia of experiencia_laboral; index as id"
+        >
+          <div>
+            <p class="item-formacion__institucion">
+              {{ experiencia.empresa }}
+            </p>
+            <p class="item-formacion__fechas">
+              {{ experiencia.incioExperiencia }} ---
+              {{ experiencia.finExperiencia }}
+            </p>
+          </div>
+
+          <div>
+            <button (click)="onModificarModalE(experiencia.idExperiencia)">
+              Editar
+            </button>
+            <button
+              (click)="onEliminarFormacionE(experiencia.idExperiencia, id)"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<app-modal-academico
+  [showModal]="showModal"
+  [accion]="accion"
+  [formacionAcademica]="oneFormacion"
+  (ocultarModal)="onResponseModal($event)"
+  (agregarFormacion)="actualizarListaFA($event)"
+></app-modal-academico>
+<app-modal-laboral
+  [showModal]="showModalE"
+  [accion]="accionE"
+  [experienciaLaboral]="oneExperiencia"
+  (ocultarModal)="onResponseModalE($event)"
+  (agregarExperiencia)="actualizarListaFAE($event)"
+></app-modal-laboral>
