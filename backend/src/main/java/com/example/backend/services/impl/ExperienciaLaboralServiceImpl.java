@@ -5,6 +5,8 @@ import com.example.backend.repositories.ExperienciaLaboralRepository;
 import com.example.backend.services.ExperienciaLaboralService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ExperienciaLaboralServiceImpl implements ExperienciaLaboralService {
 
@@ -30,5 +32,10 @@ public class ExperienciaLaboralServiceImpl implements ExperienciaLaboralService 
     @Override
     public void deleteExperienciaLaboral(Integer id) {
        experienciaLaboralRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ExperienciaLaboral> listar() {
+        return experienciaLaboralRepository.findAll();
     }
 }

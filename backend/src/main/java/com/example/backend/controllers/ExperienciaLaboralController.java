@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.List;
+
 //DEFINIR CONTROLADOR-PETICIONES
 @RestController
 //DEFINIR LA RUTA
@@ -19,7 +22,7 @@ public class ExperienciaLaboralController {
 
     //DEFINICION TIPO DE PETICION POST
     @PostMapping
-    public ResponseEntity<ExperienciaLaboral> createExperienciaLaboral(@RequestBody ExperienciaLaboral experienciaLaboral){
+    public ResponseEntity<ExperienciaLaboral> createExperienciaLaboral(@Valid @RequestBody ExperienciaLaboral experienciaLaboral){
         ExperienciaLaboral experienciaLaboralNew1 = experienciaLaboralService.createExperienciaLaboral(experienciaLaboral);
         return  new ResponseEntity<ExperienciaLaboral>(experienciaLaboralNew1, HttpStatus.CREATED);
     }
@@ -34,7 +37,14 @@ public class ExperienciaLaboralController {
     @DeleteMapping("/{idExperienciaLaboral}")
     public ResponseEntity<String> deleteExperienciaLaboral(@PathVariable("idExperienciaLaboral") Integer idExperienciaLaboral){
         experienciaLaboralService.deleteExperienciaLaboral(idExperienciaLaboral);
-        return  new ResponseEntity<>("Experiencia Laboral eliminada", HttpStatus.OK);
+        return  new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    //Listar oferta
+    @GetMapping
+    public ResponseEntity<List<ExperienciaLaboral>> listar(){
+        List<ExperienciaLaboral> listarExperiencias = experienciaLaboralService.listar();
+        return new ResponseEntity<>(listarExperiencias,HttpStatus.CREATED);
     }
 }
 

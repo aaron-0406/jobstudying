@@ -5,6 +5,8 @@ import com.example.backend.repositories.FormacionAcademicaRepository;
 import com.example.backend.services.FormacionAcademicaService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FormacionAcademicaServiceImpl implements FormacionAcademicaService {
 
@@ -28,5 +30,10 @@ public class FormacionAcademicaServiceImpl implements FormacionAcademicaService 
     @Override
     public void deleteFormacionAcademica(Integer id) {
         formacionAcademicaRepository.deleteById(id);
+    }
+
+    @Override
+    public List<FormacionAcademica> listar() {
+        return formacionAcademicaRepository.findAll();
     }
 }

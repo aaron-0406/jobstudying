@@ -2,14 +2,12 @@ package com.example.backend.controllers;
 
 import com.example.backend.model.FormacionAcademica;
 import com.example.backend.services.FormacionAcademicaService;
-import org.hibernate.annotations.Parameter;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
 import javax.validation.Valid;
+import java.util.List;
 
 //DEFINIR CONTROLADOR - PETICIONES
 @RestController
@@ -42,7 +40,14 @@ public class FormacionAcademicaController {
     @DeleteMapping("/{idFormacion}")
     public ResponseEntity<String> eliminarFormacionAcademica(@PathVariable("idFormacion") Integer idFormacion){
         formacionAcademicaService.deleteFormacionAcademica(idFormacion);
-        return new ResponseEntity<>("Formacion Academica eliminada", HttpStatus.OK) ;
+        return new ResponseEntity<>(HttpStatus.OK) ;
+    }
+
+    //Listar formacion academica
+    @GetMapping
+    public ResponseEntity<List<FormacionAcademica>> listar(){
+        List<FormacionAcademica> listarFormaciones = formacionAcademicaService.listar();
+        return new ResponseEntity<>(listarFormaciones,HttpStatus.OK);
     }
 
 }

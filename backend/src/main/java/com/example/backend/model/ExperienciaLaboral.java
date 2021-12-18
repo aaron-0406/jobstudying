@@ -12,11 +12,11 @@ public class ExperienciaLaboral {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idExperiencia;
 
-    @Size (min = 1, max = 30, message = "Empresa debe tener como mínimo 1 caracteres.")
+    @Size (min = 1, max = 100, message = "Empresa debe tener como mínimo 1 caracteres.")
     @Column(name = "empresa", nullable = false, length = 30)
     private String empresa;
 
-    @Size (min = 10, max = 300, message = "Descripcion debe tener como mínimo 10 caracteres.")
+    @Size (min = 1, max = 300, message = "Descripcion debe tener como mínimo 1 caracter.")
     @Column(name = "description", nullable = false, length = 300)
     private String description;
 
@@ -31,10 +31,10 @@ public class ExperienciaLaboral {
     @Column(name= "fin_experiencia", nullable = true)
     private LocalDate finExperiencia;
 
-    public ExperienciaLaboral(Integer idExperiencia, String empresa, String descripcion, String cargo, LocalDate incioExperiencia, LocalDate finExperiencia) {
+    public ExperienciaLaboral(Integer idExperiencia, String empresa, String description, String cargo, LocalDate incioExperiencia, LocalDate finExperiencia) {
         this.idExperiencia = idExperiencia;
         this.empresa = empresa;
-        this.description = descripcion;
+        this.description = description;
         this.cargo = cargo;
         this.incioExperiencia = incioExperiencia;
         this.finExperiencia = finExperiencia;
@@ -58,12 +58,12 @@ public class ExperienciaLaboral {
         this.empresa = empresa;
     }
 
-    public String getDescripcion() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.description = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCargo() {
